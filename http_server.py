@@ -74,7 +74,9 @@ def response_path(path):
         response_path('/a_page_that_doesnt_exist.html') -> Raises a NameError
 
     """
-    fpath = os.path.join(os.getcwd(), 'webroot', path.strip('/'))
+    #Can easily asign a home directory if needed, using cwd for exercise
+    home_directory = os.getcwd()
+    fpath = os.path.join(home_directory, 'webroot', path.strip('/'))
 
     # If the path is a directory:
     if os.path.isdir(fpath):
